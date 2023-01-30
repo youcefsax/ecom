@@ -1,37 +1,26 @@
-import Dirctory from './components/directory/dirctory.components';
-const App=()=> {
-  const derctories=[
-    {
-      "id": 1,
-      "title": "hats",
-      "imageUrl": "https://assets.burberry.com/is/image/Burberryltd/587CBED2-693F-49C6-BF55-542BDD7B5BF0?$BBY_V2_ML_1x1$&wid=2500&hei=2500"
-    },
-    {
-      "id": 2,
-      "title": "jackets",
-      "imageUrl": "https://assets.burberry.com/is/image/Burberryltd/587CBED2-693F-49C6-BF55-542BDD7B5BF0?$BBY_V2_ML_1x1$&wid=2500&hei=2500"
-    },
-    {
-      "id": 3,
-      "title": "sneakers",
-      "imageUrl": "https://assets.burberry.com/is/image/Burberryltd/587CBED2-693F-49C6-BF55-542BDD7B5BF0?$BBY_V2_ML_1x1$&wid=2500&hei=2500"
-    },
-    {
-      "id": 4,
-      "title": "womens",
-      "imageUrl": "https://assets.burberry.com/is/image/Burberryltd/587CBED2-693F-49C6-BF55-542BDD7B5BF0?$BBY_V2_ML_1x1$&wid=2500&hei=2500"
-    },
-    {
-      "id": 5,
-      "title": "mens",
-      "imageUrl": "https://assets.burberry.com/is/image/Burberryltd/587CBED2-693F-49C6-BF55-542BDD7B5BF0?$BBY_V2_ML_1x1$&wid=2500&hei=2500"
-    }
-  ]
+import { Outlet, Route, Routes } from "react-router-dom";
+import Home from "./routes/home/home.components";
+import Nav from "./components/category/Navigation/Nav";
+import SignIn from "./routes/sign-in/signin.components";
+const Shop=()=>{
+  return(
+    <h1>nav</h1>
+  )
+}
+ 
 
+const App=()=> {
+  
   return (
     <div className="app">
-     <Dirctory derctories={derctories} />
-        
+      <Routes>
+        <Route path="/" element={<Nav />} >
+          <Route index element={<Home />} />
+          <Route path="shope" element={<Shop />} />
+          <Route path="sign" element={<SignIn />} />
+        </Route>
+      </Routes>
+       
     </div>
   );
 }

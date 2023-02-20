@@ -40,7 +40,7 @@ const SignUp=()=>{
     }
     const handleChange=(event)=>{
         const {name, value}=event.target;
-        setfield({...field,[name]: value})
+        setfield({...field,[name]: value});
     }
     console.log(field)
     return(
